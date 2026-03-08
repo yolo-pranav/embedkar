@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { TableOfContents } from './TableOfContents';
 import { SectionId } from '../types';
 
 interface LayoutProps {
   children: React.ReactNode;
   activeSection: SectionId;
   onNavigate: (id: string) => void;
-  tocItems?: { id: string; title: string; level: number }[];
 }
 
-export function Layout({ children, activeSection, onNavigate, tocItems = [] }: LayoutProps) {
+export function Layout({ children, activeSection, onNavigate }: LayoutProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -29,12 +27,10 @@ export function Layout({ children, activeSection, onNavigate, tocItems = [] }: L
       <div className="lg:pl-72 flex flex-col min-h-screen">
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
         
-        <main className="flex-1 flex flex-col lg:flex-row">
-          <div className="flex-1 px-4 py-8 lg:px-12 lg:py-12 max-w-5xl mx-auto w-full">
+        <main className="flex-1">
+          <div className="px-4 py-8 lg:px-12 lg:py-12 max-w-5xl mx-auto w-full">
             {children}
           </div>
-          
-          <TableOfContents items={tocItems} />
         </main>
 
         <footer className="px-4 py-8 lg:px-12 border-t border-copper/10 bg-white/30">

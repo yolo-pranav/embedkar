@@ -58,20 +58,10 @@ export default function App() {
     }
   };
 
-  // Mock TOC items for the current page
-  const tocItems = activeSection === 'home' ? [] : [
-    { id: 'overview', title: 'Overview', level: 1 },
-    { id: 'principles', title: 'Key Principles', level: 1 },
-    { id: 'guidelines', title: 'Guidelines', level: 2 },
-    { id: 'examples', title: 'Examples', level: 2 },
-    { id: 'resources', title: 'Resources', level: 1 },
-  ];
-
   return (
     <Layout 
       activeSection={activeSection} 
       onNavigate={handleNavigate}
-      tocItems={tocItems}
     >
       {renderContent()}
     </Layout>

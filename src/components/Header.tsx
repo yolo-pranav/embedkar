@@ -49,12 +49,17 @@ export function Header({ onMenuClick }: HeaderProps) {
             <Github className="w-5 h-5" />
           </a>
           <div className="h-6 w-px bg-copper/10 mx-2 hidden sm:block" />
-          <button className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-copper border border-copper/20 rounded-full hover:bg-copper/5 transition-all">
+          <a 
+            href="https://discord.com/invite/xfjUGV6p55"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-copper border border-copper/20 rounded-full hover:bg-copper/5 transition-all"
+          >
             <span className="hidden sm:inline">Join the Sabha</span>
             <div className="w-6 h-6 bg-copper/10 rounded-full flex items-center justify-center">
               <span className="text-[10px]">ॐ</span>
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </header>

@@ -78,8 +78,13 @@ export function Sidebar({ isOpen, setIsOpen, activeId, onNavigate }: SidebarProp
           {/* Logo Section */}
           <div className="p-6 border-b border-copper/10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-copper flex items-center justify-center rounded-lg shadow-lg shadow-copper/20">
-                <span className="text-parchment font-serif text-2xl font-bold">E</span>
+              <div className="w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden">
+                <img 
+                  src="/embedkar-logo.png" 
+                  alt="Embedkar Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-serif font-bold text-ink tracking-tight">Embedkar</h1>

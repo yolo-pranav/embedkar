@@ -6,14 +6,24 @@ Embedkar is a structured knowledge base of principles, workflows, and engineerin
 
 Inspired by the philosophy of discipline, structure, and governance, Embedkar aims to do for embedded systems what a constitution does for a nation — provide guiding principles that engineers can follow while designing hardware and firmware.
 
-## Meaning Behind the Name
+## Origin of the Word “Embedkar”
 
-The name Embedkar blends three ideas:
-- **Embed** → Embedded systems
-- **Kar (कर)** → Sanskrit/Hindi meaning to do / to act
-- Inspired by **Dr. B. R. Ambedkar**, architect of the Indian Constitution
+The name Embedkar is a deliberate fusion of ideas drawn from engineering, language, and history.
 
-Embedkar represents the idea of engineering dharma — the discipline and responsibility behind designing systems that interact with the physical world.
+The first part, **“Embed”**, represents embedded systems engineering — the discipline of designing hardware–software systems that interact with the physical world. Embedded systems form the foundation of modern technology, powering everything from medical devices and robotics to industrial machines and satellites.
+
+The second part, **“Kar”**, comes from the Sanskrit and Hindi root **“कर”**, which broadly means “to do”, “to act”, or “to create.” In many Indian languages it carries the sense of performing an action or executing a task. In the context of the project, it subtly suggests the idea of “doing embedded engineering.”
+
+The name also intentionally echoes **Dr. B. R. Ambedkar**, the principal architect of the Indian Constitution. Just as a constitution establishes the foundational rules that guide a nation, Embedkar seeks to document the principles that guide embedded engineering.
+
+Thus, the word Embedkar reflects three intertwined ideas:
+- **Embed** — Embedded systems engineering
+- **Kar (कर)** — To do, to create, to act
+- **Ambedkar reference** — The idea of a constitution that governs a system
+
+Together, the name symbolizes a constitution for embedded engineering — a structured body of principles that help engineers design reliable, disciplined, and thoughtful systems.
+
+In essence, Embedkar represents the idea of practicing embedded engineering with structure, responsibility, and purpose.
 
 ## Philosophy
 
