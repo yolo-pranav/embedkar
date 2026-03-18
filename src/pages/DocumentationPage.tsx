@@ -12,8 +12,7 @@ interface DocumentationPageProps {
 
 export function DocumentationPage({ sectionId, title }: DocumentationPageProps) {
   const entries = MOCK_ENTRIES.filter(e => 
-    e.metadata.category.toLowerCase().includes(title.toLowerCase()) || 
-    sectionId === 'principles'
+    title.toLowerCase().includes(e.metadata.category.toLowerCase())
   );
 
   return (

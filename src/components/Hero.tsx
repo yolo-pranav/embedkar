@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { TAGLINES } from '../constants';
 import { ChevronRight, ScrollText, ShieldCheck, Zap } from 'lucide-react';
 
 export function Hero() {
+  const navigate = useNavigate();
   const [taglineIndex, setTaglineIndex] = useState(0);
 
   useEffect(() => {
@@ -51,12 +53,18 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <button className="px-8 py-4 bg-copper text-parchment rounded-xl font-bold shadow-xl shadow-copper/20 hover:bg-copper/90 transition-all flex items-center gap-2 group">
+            <button 
+              onClick={() => navigate('/preamble')}
+              className="px-8 py-4 bg-copper text-parchment rounded-xl font-bold shadow-xl shadow-copper/20 hover:bg-copper/90 transition-all flex items-center gap-2 group"
+            >
               Read the Preamble
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-white text-ink border border-copper/10 rounded-xl font-bold hover:bg-parchment transition-all">
-              Explore Principles
+            <button 
+              onClick={() => navigate('/core-laws')}
+              className="px-8 py-4 bg-white text-ink border border-copper/10 rounded-xl font-bold hover:bg-parchment transition-all"
+            >
+              Explore Core Laws
             </button>
           </div>
         </motion.div>

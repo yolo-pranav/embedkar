@@ -14,7 +14,7 @@ export interface EntryMetadata {
   category: string;
   tags: string[];
   difficulty: 'Basic' | 'Intermediate' | 'Advanced';
-  type: 'Hardware' | 'Software' | 'Architecture' | 'Workflow';
+  type: 'Hardware' | 'Software' | 'Architecture' | 'Workflow' | 'Checklist' | 'Philosophy';
   lastUpdated: string;
 }
 
@@ -30,7 +30,8 @@ export interface Entry {
 export type SectionId = 
   | 'home'
   | 'preamble'
-  | 'principles'
+  | 'core-laws'
+  | 'reliability'
   | 'pcb-design'
   | 'firmware'
   | 'architecture'

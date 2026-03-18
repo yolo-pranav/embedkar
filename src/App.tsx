@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Hero } from './components/Hero';
 import { Preamble } from './pages/Preamble';
@@ -7,63 +8,47 @@ import { DocumentationPage } from './pages/DocumentationPage';
 import { SectionId } from './types';
 import { NAVIGATION } from './constants';
 
-export default function App() {
-  const [activeSection, setActiveSection] = useState<SectionId>('home');
-
-  // Simple routing based on hash or state
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '') as SectionId;
-      if (hash) {
-        setActiveSection(hash);
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const handleNavigate = (id: string) => {
-    setActiveSection(id as SectionId);
-    window.location.hash = id;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+function AppContent() {
+  const location = useLocation();
+  
+  // Map path to SectionId for active state in Sidebar
+  const getActiveSection = (): SectionId => {
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    const item = NAVIGATION.find(n => n.path === path);
+    return (item?.id as SectionId) || 'home';
   };
 
-  const getActiveTitle = () => {
-    const findTitle = (items: any[]): string | undefined => {
-      for (const item of items) {
-        if (item.id === activeSection) return item.title;
-        if (item.children) {
-          const childTitle = findTitle(item.children);
-          if (childTitle) return childTitle;
-        }
-      }
-      return undefined;
-    };
-    return findTitle(NAVIGATION) || 'Home';
-  };
-
-  const renderContent = () => {
-    switch (activeSection) {
-      case 'home':
-        return <Hero />;
-      case 'preamble':
-        return <Preamble />;
-      case 'vision':
-        return <Vision />;
-      default:
-        return <DocumentationPage sectionId={activeSection} title={getActiveTitle()} />;
-    }
+  const getTitleForPath = (path: string) => {
+    const item = NAVIGATION.find(n => n.path === path);
+    return item?.title || 'Home';
   };
 
   return (
-    <Layout 
-      activeSection={activeSection} 
-      onNavigate={handleNavigate}
-    >
-      {renderContent()}
+    <Layout activeSection={getActiveSection()}>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/preamble" element={<Preamble />} />
+        <Route path="/vision" element={<Vision />} />
+        <Route path="/core-laws" element={<DocumentationPage sectionId="core-laws" title="Core Laws" />} />
+        <Route path="/reliability" element={<DocumentationPage sectionId="reliability" title="Reliability" />} />
+        <Route path="/pcb-design" element={<DocumentationPage sectionId="pcb-design" title="PCB Design Constitution" />} />
+        <Route path="/firmware" element={<DocumentationPage sectionId="firmware" title="Firmware Constitution" />} />
+        <Route path="/architecture" element={<DocumentationPage sectionId="architecture" title="Embedded Architecture" />} />
+        <Route path="/debugging" element={<DocumentationPage sectionId="debugging" title="Debugging Laws" />} />
+        <Route path="/tools" element={<DocumentationPage sectionId="tools" title="Tools & Workflows" />} />
+        <Route path="/checklists" element={<DocumentationPage sectionId="checklists" title="Design Checklists" />} />
+        <Route path="/philosophy" element={<DocumentationPage sectionId="philosophy" title="Engineering Philosophy" />} />
+        <Route path="*" element={<Hero />} />
+      </Routes>
     </Layout>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
