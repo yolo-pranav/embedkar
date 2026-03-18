@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Search, Menu, X, Book, Feather, Scale, Cpu, Zap, Layout as LayoutIcon, Settings, CheckSquare, Lightbulb, History } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Book, Feather, Scale, Cpu, Zap, Layout as LayoutIcon, Settings, CheckSquare, Lightbulb, History, ShieldCheck } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { NAVIGATION } from '../constants';
 import { NavItem } from '../types';
@@ -8,14 +9,14 @@ interface SidebarProps {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   activeId: string;
-  onNavigate: (id: string) => void;
 }
 
 const iconMap: Record<string, React.ReactNode> = {
   home: <Book className="w-4 h-4" />,
   preamble: <Feather className="w-4 h-4" />,
   vision: <History className="w-4 h-4" />,
-  principles: <Scale className="w-4 h-4" />,
+  'core-laws': <Scale className="w-4 h-4" />,
+  'reliability': <ShieldCheck className="w-4 h-4" />,
   'pcb-design': <LayoutIcon className="w-4 h-4" />,
   firmware: <Cpu className="w-4 h-4" />,
   architecture: <Zap className="w-4 h-4" />,
@@ -25,15 +26,16 @@ const iconMap: Record<string, React.ReactNode> = {
   philosophy: <Lightbulb className="w-4 h-4" />,
 };
 
-export function Sidebar({ isOpen, setIsOpen, activeId, onNavigate }: SidebarProps) {
+export function Sidebar({ isOpen, setIsOpen, activeId }: SidebarProps) {
   const renderNavItem = (item: NavItem, depth = 0) => {
     const isActive = activeId === item.id;
     const hasChildren = item.children && item.children.length > 0;
 
     return (
       <div key={item.id} className="mb-1">
-        <button
-          onClick={() => onNavigate(item.id)}
+        <Link
+          to={item.path}
+          onClick={() => setIsOpen(false)}
           className={cn(
             "w-full flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-all duration-200 group",
             isActive 
@@ -49,7 +51,7 @@ export function Sidebar({ isOpen, setIsOpen, activeId, onNavigate }: SidebarProp
             {iconMap[item.id] || <Book className="w-4 h-4" />}
           </span>
           {item.title}
-        </button>
+        </Link>
         {hasChildren && (
           <div className="mt-1">
             {item.children!.map(child => renderNavItem(child, depth + 1))}
@@ -80,7 +82,7 @@ export function Sidebar({ isOpen, setIsOpen, activeId, onNavigate }: SidebarProp
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden">
                 <img 
-                  src="/embedkar-logo.png" 
+                  src={`${import.meta.env.VITE_IMAGE_BASE_URL || ''}/embedkar-logo.png`} 
                   alt="Embedkar Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"

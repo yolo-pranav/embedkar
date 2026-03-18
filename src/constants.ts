@@ -13,15 +13,8 @@ export const NAVIGATION: NavItem[] = [
   { id: 'home', title: 'Home', path: '/' },
   { id: 'preamble', title: 'Preamble', path: '/preamble' },
   { id: 'vision', title: 'Inspiration & Vision', path: '/vision' },
-  { 
-    id: 'principles', 
-    title: 'Principles', 
-    path: '/principles',
-    children: [
-      { id: 'core-laws', title: 'Core Laws', path: '/principles/core' },
-      { id: 'reliability', title: 'Reliability', path: '/principles/reliability' },
-    ]
-  },
+  { id: 'core-laws', title: 'Core Laws', path: '/core-laws' },
+  { id: 'reliability', title: 'Reliability', path: '/reliability' },
   { id: 'pcb-design', title: 'PCB Design Constitution', path: '/pcb-design' },
   { id: 'firmware', title: 'Firmware Constitution', path: '/firmware' },
   { id: 'architecture', title: 'Embedded Architecture', path: '/architecture' },

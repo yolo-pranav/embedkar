@@ -9,7 +9,10 @@ interface EntryCardProps {
 
 export function EntryCard({ entry }: EntryCardProps) {
   return (
-    <div className="bg-white border border-copper/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+    <div 
+      id={entry.metadata.id}
+      className="bg-white border border-copper/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group"
+    >
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex flex-wrap gap-2">
