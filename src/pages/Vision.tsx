@@ -39,8 +39,8 @@ export function Vision() {
           className="relative pt-8 lg:pt-12"
         >
           <div className="absolute inset-0 bg-white border border-copper/10 rounded-[3rem] lg:rounded-[4rem] shadow-xl shadow-copper/5 overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-copper/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px]" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-saffron/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]" />
+            <div className="absolute top-0 right-0 w-150 h-150 bg-copper/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-100 h-100 bg-saffron/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]" />
             <div className="absolute inset-0 mandala-pattern opacity-20" />
           </div>
 
@@ -103,7 +103,7 @@ export function Vision() {
               </div>
             </div>
             
-            <div className="relative aspect-square rounded-[2rem] overflow-hidden border border-copper/10 bg-parchment flex items-center justify-center shadow-inner">
+            <div className="relative aspect-square rounded-4xl overflow-hidden border border-copper/10 bg-parchment flex items-center justify-center shadow-inner">
               <div className="absolute inset-0 mandala-pattern opacity-10" />
               <div className="absolute inset-0 sacred-grid opacity-20" />
               <Target className="w-24 h-24 text-copper/10" />
@@ -121,9 +121,9 @@ export function Vision() {
           variants={itemVariants} 
           className="relative"
         >
-          <div className="absolute inset-0 bg-copper/[0.03] border border-copper/10 rounded-[2.5rem] -z-10 overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] mandala-pattern opacity-[0.08] animate-[spin_120s_linear_infinite]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+          <div className="absolute inset-0 bg-copper/3 border border-copper/10 rounded-[2.5rem] -z-10 overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 mandala-pattern opacity-[0.08] animate-[spin_120s_linear_infinite]" />
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-transparent" />
           </div>
 
           <div className="p-8 lg:p-16 flex flex-col items-center text-center space-y-8">
@@ -154,7 +154,7 @@ export function Vision() {
                 { label: 'Balance', icon: Compass, desc: 'Respecting physical limits and constraints.', color: 'text-saffron' },
                 { label: 'Wisdom', icon: Lightbulb, desc: 'Learning from the boundaries of the past.', color: 'text-gold' }
               ].map((item, i) => (
-                <div key={i} className="p-6 glass-card rounded-[1.5rem] hover:bg-white transition-all duration-500 group temple-border">
+                <div key={i} className="p-6 glass-card rounded-3xl hover:bg-white transition-all duration-500 group temple-border">
                   <item.icon className={`w-6 h-6 ${item.color} mb-3 mx-auto group-hover:scale-110 transition-transform`} />
                   <h4 className="font-serif font-bold text-lg mb-1 tracking-tight">{item.label}</h4>
                   <p className="text-xs text-ink/60 leading-relaxed">{item.desc}</p>
@@ -224,7 +224,7 @@ export function Vision() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -8 }}
-                className={`p-6 ${item.color} border border-copper/10 rounded-[1.5rem] transition-all duration-500 relative overflow-hidden group shadow-sm hover:shadow-md`}
+                className={`p-6 ${item.color} border border-copper/10 rounded-3xl transition-all duration-500 relative overflow-hidden group shadow-sm hover:shadow-md`}
               >
                 <item.icon className={`absolute -right-3 -bottom-3 w-20 h-20 opacity-[0.04] ${item.text} group-hover:scale-110 transition-transform duration-700`} />
                 <h4 className={`font-serif font-bold text-xl ${item.text} mb-3 tracking-tight`}>{item.title}</h4>
@@ -237,8 +237,8 @@ export function Vision() {
         {/* Final Quote */}
         <motion.section variants={itemVariants}>
           <div className="p-12 lg:p-20 bg-ink text-parchment rounded-[2.5rem] relative overflow-hidden shadow-xl group text-center">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-copper/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px] group-hover:bg-copper/30 transition-colors duration-1000" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-saffron/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]" />
+            <div className="absolute top-0 right-0 w-125 h-125 bg-copper/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px] group-hover:bg-copper/30 transition-colors duration-1000" />
+            <div className="absolute bottom-0 left-0 w-75 h-75 bg-saffron/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px]" />
             <div className="absolute inset-0 mandala-pattern opacity-5" />
             <div className="absolute inset-0 sacred-grid opacity-[0.02]" />
             

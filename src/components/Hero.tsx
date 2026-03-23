@@ -18,8 +18,8 @@ export function Hero() {
   return (
     <div className="relative overflow-hidden py-16 lg:py-24">
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-copper/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-saffron/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-150 h-150 bg-copper/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-100 h-100 bg-saffron/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl">
         <motion.div
