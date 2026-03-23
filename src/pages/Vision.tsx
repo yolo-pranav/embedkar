@@ -1,6 +1,6 @@
-import React from 'react';
 import { motion, Variants } from 'motion/react';
 import { Compass, Lightbulb, Target, Users, ArrowRight, ScrollText, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -22,10 +22,7 @@ const itemVariants: Variants = {
 };
 
 export function Vision() {
-  const handleGoToPreamble = () => {
-    window.location.hash = 'preamble';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const navigate = useNavigate();
 
   return (
     <div className="max-w-6xl mx-auto pb-32 px-6 lg:px-12">
@@ -68,7 +65,7 @@ export function Vision() {
             </p>
             
             <button 
-              onClick={handleGoToPreamble}
+              onClick={() => navigate('/preamble')}
               className="group relative flex items-center gap-3 px-6 py-3 bg-ink text-parchment rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-md shadow-ink/20"
             >
               <span className="relative z-10 text-sm tracking-wide">Read the Preamble</span>
