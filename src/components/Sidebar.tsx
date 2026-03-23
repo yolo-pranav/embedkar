@@ -82,7 +82,7 @@ export function Sidebar({ isOpen, setIsOpen, activeId }: SidebarProps) {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 flex items-center justify-center rounded-lg overflow-hidden">
                 <img 
-                  src={`${import.meta.env.VITE_IMAGE_BASE_URL || ''}/embedkar-logo.png`} 
+                  src={`/embedkar-logo.png`} 
                   alt="Embedkar Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
